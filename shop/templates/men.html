@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet"/>
+<link href="{% static 'style.css' %}" rel="stylesheet" />
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MiMi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/men">Men</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/women">Women</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="jumbotron">
+    <h1>Shop MIMI</h1>
+    <p>Welcome you came to shop!!!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for sock in products %}
+            <div class="col">
+                <h2 class="sock_style"> {{sock.name }}</h2>
+                {% if sock.picture %}
+                    <img src="{{ sock.picture.url }}" />
+
+
+                {% endif %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        DETAIL
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div>price: {{ sock.price }}</div>
+                        <div>size: {{ sock.size }}</div>
+                        <div>detail:{{ sock.detail|safe }}</div>
+                        <div>brand: {{ sock.brand }}</div>
+                        <div>condition: {{ sock.condition }}</div>
+                        <div>material: {{ sock.material }}</div>
+                        <div>rating: {{ sock.rating }}</div>
+                        <div>color: {{ sock.color }}</div>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.js"></script>
