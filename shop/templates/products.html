@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        {% for sock in products %}
+            <div class="col">
+                <h2 class="sock_style">
+                    <a href="/detail/{{ sock.id }}">{{ sock.name }}</a>
+                </h2>
+                {% if sock.picture %}
+                    <img src="{{ sock.picture.url }}"/>
+
+
+                {% endif %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        DETAIL
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div>Price: {{ sock.price }}</div>
+                        <div>Size: {{ sock.size }}</div>
+                        <div>Detail:{{ sock.detail|safe }}</div>
+                        <div>Brand: {{ sock.brand }}</div>
+                        <div>Condition: {{ sock.condition }}</div>
+                        <div>Material: {{ sock.material }}</div>
+                        <div>Rating: {{ sock.rating }}</div>
+                        <div>Color: {{ sock.color }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="fb-messengermessageus"
+  messenger_app_id="<APP_ID>"
+  page_id="<PAGE_ID>"
+  color="<blue | white>"
+  size="<small | medium | standard | large | xlarge>"
+</div>

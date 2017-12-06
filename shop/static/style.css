@@ -1,4 +1,9 @@
-
+.title{
+    text-align: center;
+    color: black;
+    lighting-color: 0.5rem;
+    font-size: 32px;
+}
 img
 {
     height: 200px;
@@ -9,16 +14,25 @@ img
     font-size: 16px;
     color: #A52A2A;
 }
-.boloctimkiem
+.top-right
 {
-    border-bottom: 1px solid rgba(0,0,0,.09);
+    margin-right: 10px;
+    flex-basis: 72%;
+    max-width: 72%;
     display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    text-transform: uppercase;
-    color: rgba(0,0,0,.8);
-    height: 3rem;
-    font-weight: 700;
-    font-size: 1.6rem;
-
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    line-height: 0.2;
+}
+.btn svg {
+    width: 1em;
+    height: 1em;
+}
+.buy{
+    color: red;
+}
+.row2
+{
+    background-color: #ffd4aa;
 }
